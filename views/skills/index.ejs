@@ -1,0 +1,27 @@
+<link rel="stylesheet" href="/stylesheets/style.css" />
+
+
+
+<h1>Skills</h1>
+
+<a href="/skills/new">Add Skill</a>
+
+<ul>
+
+  <% skills.forEach(skill=> { %>
+
+    <li>
+
+      <%= skill.skill %> (Level: <%= skill.level %>)
+
+          <form action="/skills/<%= skill.id %>?_method=DELETE" method="POST">
+
+            <button type="submit">Delete Skill</button>
+
+          </form>
+
+    </li>
+
+    <% }) %>
+
+</ul>
